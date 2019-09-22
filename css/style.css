@@ -1534,7 +1534,7 @@
 	padding: 0;
 }
 
-@media (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
 	.container {
 		width: 100%;
 /* 		box-shadow: none; */
@@ -1558,11 +1558,11 @@
 	.block-main-menu {
 		position: fixed;
 		flex-direction: column;
-		width: 100%;
+		min-width: 100%;
 		top: 96px;
-		background-color: #362f2d;;
+		background-color: #362f2d;
 		left: 0;
-		display: none;
+/* 		display: none; */
 	}
 
 	.main-menu-item {
@@ -1571,9 +1571,25 @@
 		text-align: center;
 		padding: 8px;
 	}
+
+	.main-menu-item:hover {
+		background-color: #fff;
+	}
+
+	.main-menu-item:hover .main-menu-link {
+		color: #362f2d;
+	}
+
+	.main-menu-form {
+
+	}
 	
 	.button-basket {
 		display: none;
+	}
+
+	.main-menu-search-input {
+		position: relative;
 	}
 
 	.carousel {
@@ -1602,7 +1618,7 @@
 	.realisation,
 	.purchase,
 	.latest,
-/* 	.presentation, */
+	.presentation,
 	.excellent-for,
 	.achievements,
 	.recent,
