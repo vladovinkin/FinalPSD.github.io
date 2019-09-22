@@ -1533,3 +1533,80 @@
 	content: "";
 	padding: 0;
 }
+
+@media (max-width: 575.98px) {
+	.container {
+		width: 100%;
+/* 		box-shadow: none; */
+	}
+
+	.main-header {
+		min-height: inherit;
+		padding:0;
+		background-size: cover;
+	}
+
+	.header-up {
+		padding: 20px;
+		justify-content: center;
+	}
+
+	.block-menu-buttons {
+		flex-direction: column;
+	}
+
+	.block-main-menu {
+		position: fixed;
+		flex-direction: column;
+		width: 100%;
+		top: 96px;
+		background-color: #362f2d;;
+		left: 0;
+		display: none;
+	}
+
+	.main-menu-item {
+		width: 100%;
+		border: 1px solid #fff;
+		text-align: center;
+		padding: 8px;
+	}
+	
+	.button-basket {
+		display: none;
+	}
+
+	.carousel {
+		display: none;
+	}
+
+	.activities {
+		display: none;
+	}
+
+	.presentation-video {
+		width: 100%;
+		min-height: 300px;
+	}
+
+	.customers {
+		flex-direction: column;
+		padding: 100px 0;
+		background-size: cover
+	}
+
+	.customers-link {
+		margin: 50px 0;
+	}
+
+	.realisation,
+	.purchase,
+	.latest,
+/* 	.presentation, */
+	.excellent-for,
+	.achievements,
+	.recent,
+/* 	.customers, */
+	.main-footer 
+	{display: none;}
+}
