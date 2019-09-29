@@ -10,6 +10,9 @@
 <div class="container">
 	<header class="main-header">
 		<div class="header-up">
+			<form class="main-menu-form" action="#">
+				<input type="search" class="main-menu-search-input" placeholder="Finding...">
+			</form>
 			<a href="index.html" class="logo-main-link" title="Main page">
 				<svg class="logo-image" 
 					xmlns="http://www.w3.org/2000/svg" 
@@ -17,9 +20,17 @@
 					<path d="M31.854 19.905L26.6 10.713h10.508zm-1.314.766H20.032l5.254-9.191zm2.628 0l5.254-9.191 5.254 9.191zm10.508 1.53l-5.254 9.189-5.254-9.188zm-13.136 0l-5.254 9.189-5.254-9.188zm-11.822.766l5.253 9.187H13.465zm21.02 9.187l5.252-9.187 5.253 9.187zm-2.63-22.97H26.6l5.254-9.19zm2.63 24.502h10.505l-5.253 9.188zm-26.273 0H23.97l-5.253 9.188zm-1.314.765l5.253 9.19H6.897zm34.152 9.19l5.254-9.19 5.254 9.19zm10.508 1.53l-5.254 9.188-5.254-9.187zm-13.135 0l-5.254 9.188-5.254-9.187zm-36.779 0h10.507L12.15 54.36zm-1.315.768l5.254 9.189H.33zm26.272 0l5.254 9.189H26.6zm13.136 0l5.253 9.189H39.738zm18.387 9.189H52.873l5.252-9.189z"/>
 				</svg>
 				<span class="logo-txt">Waxom</span></a>
-			<div class="block-menu-buttons">
+			<div class="block-menu-buttons">	
+				<input type="checkbox" class="menu-open-checkbox" id="menu-open"/>
+				<label class="burger-button" for="menu-open">
+					<span id="burger-icon" class="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</label>				
 				<nav class="main-menu">
-					<ul class="block-main-menu">
+					<ul id="main-menu" class="block-main-menu">
 						<li class="main-menu-item"><a href="#" class="main-menu-link" title="Home page">Home</a></li>
 						<li class="main-menu-item"><a href="#" class="main-menu-link" title="About us page">About Us</a></li>
 						<li class="main-menu-item"><a href="#" class="main-menu-link" title="Portfolio page">Portfolio</a></li>
@@ -124,6 +135,11 @@
 				<div class="realisation-screenshot1"><img class="realisation-image-1" src="img/browser-center.jpg" width="770" height="482" alt="realization1"></div>
 				<div class="realisation-screenshot2"><img class="realisation-image-2" src="img/browser-left.jpg" width="770" height="400" alt="realization2"></div>
 				<div class="realisation-screenshot3"><img class="realisation-image-3" src="img/browser-right.jpg" width="770" height="400" alt="realization3"></div>
+			</div>
+			<div class="block-realisation-screenshots-mobile">
+				<img class="realisation-image-1" src="img/browser-center.jpg" width="385" height="241" alt="realization1">
+				<img class="realisation-image-2" src="img/browser-left.jpg" width="385" height="200" alt="realization2">
+				<img class="realisation-image-3" src="img/browser-right.jpg" width="385" height="200" alt="realization3">
 			</div>
 		</section>
 		<aside class="purchase">
@@ -237,6 +253,11 @@
 				src="video/presentation-video.mp4" 
 				poster="img/video-preview.jpg">
 			</video>
+			<video id="presentation-video-id-mobile"
+				class="presentation-video-mobile"
+				src="video/presentation-video.mp4" 
+				poster="img/video-preview.jpg">
+			</video>
  			<div class="presentation-block-over-video">
 				<svg class="presentation-btn-start" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
 					<circle r="50" cx="50" cy="50" fill="#000" opacity=".2" />
@@ -250,11 +271,16 @@
 					crossorigin="anonymous">
 				</script>
 				<script>
-					var video = document.querySelector("#presentation-video-id"),
-			    		button = document.querySelector(".presentation-btn-start");
+					let video = document.querySelector("#presentation-video-id");
+					let video_mobile = document.querySelector("#presentation-video-id-mobile");
+			    	let	button = document.querySelector(".presentation-btn-start");
 						button.addEventListener("click", function() {
 						  video.play();
 						  video.setAttribute("controls","controls");
+						}, false);
+						button.addEventListener("click", function() {
+						  video_mobile.play();
+						  video_mobile.setAttribute("controls","controls");
 						}, false);
 						$(".presentation-btn-start").click(function() {
 						  $(".presentation-block-over-video").addClass('presentation-block-over-video--hide');
